@@ -7,6 +7,8 @@ interface VisitanteAttributes {
   correo?: string;
   telefono?: string;
   foto?: string;
+  direccion: string;
+  rif: string;
 }
 
 class Visitante extends Model<VisitanteAttributes> implements VisitanteAttributes {
@@ -14,6 +16,8 @@ class Visitante extends Model<VisitanteAttributes> implements VisitanteAttribute
   correo?: string;
   telefono?: string;
   foto?: string;
+  direccion!: string;
+  rif!: string;
 }
 
 Visitante.init(
@@ -26,6 +30,12 @@ Visitante.init(
       type: DataTypes.STRING,
     },
     telefono: {
+      type: DataTypes.STRING,
+    },
+    direccion: {
+      type: DataTypes.STRING,
+    },
+    rif: {
       type: DataTypes.STRING,
     },
   },
